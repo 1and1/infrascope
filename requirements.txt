@@ -1,0 +1,16 @@
+#
+# dependency list for pip
+#
+
+# runtime
+cliff >= 1.4.3
+
+# build
+docutils >= 0.11
+Sphinx == 1.1.3
+markdown2
+-e git+https://github.com/jhermann/cobblestones.git#egg=cobblestones
+
+# essential tools
+Paver >= 1.2.1
+pylint >= 1.0.0
