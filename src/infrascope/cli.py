@@ -14,11 +14,47 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+from __future__ import absolute_import, with_statement
+
+import sys
+import logging
+
+from cliff.app import App
+from cliff.commandmanager import CommandManager
+
+from infrascope import pkg_info
 
 
-def run():
+class InfrascopeCLI(App):
+    """ The main `infrascope` command line application.
+    """
+
+    log = logging.getLogger(__name__)
+
+    def __init__(self):
+        project = pkg_info()
+        super(InfrascopeCLI, self).__init__(
+            description=project["description"],
+            version='0.1', # TODO: need to get version at runtime
+            command_manager=CommandManager('infrascope.cli'),
+        )
+
+    def initialize_app(self, argv):
+        self.log.debug('initialize_app')
+
+    def prepare_to_run_command(self, cmd):
+        self.log.debug('prepare_to_run_command %s', cmd.__class__.__name__)
+
+    def clean_up(self, cmd, result, err):
+        self.log.debug('clean_up %s', cmd.__class__.__name__)
+        if err:
+            self.log.debug('got an error: %s', err)
+
+
+def run(argv=None):
     """Main CLI entry point."""
-    print("hellp, world!")
+    cli = InfrascopeCLI()
+    sys.exit(cli.run(argv if argv is None else sys.argv[1:]))
 
 
 if __name__ == "__main__":
