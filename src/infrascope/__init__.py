@@ -47,6 +47,11 @@ def pkg_info():
                 "README.md", "LICENSE", "debian/changelog",
             ]),
         ],
+        entry_points = {
+            "console_scripts": [
+                "infrascope = infrascope.cli:run",
+            ],
+        },
 
         # dependency management
         install_requires = [
