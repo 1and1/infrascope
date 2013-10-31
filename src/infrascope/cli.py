@@ -32,6 +32,7 @@ class InfrascopeCLI(App):
     log = logging.getLogger(__name__)
 
     def __init__(self):
+        """Set up main command."""
         project = pkg_info()
         super(InfrascopeCLI, self).__init__(
             description=project["description"],
@@ -40,12 +41,15 @@ class InfrascopeCLI(App):
         )
 
     def initialize_app(self, argv):
-        self.log.debug('initialize_app')
+        """Called after main argument parsing, but before command processing."""
+        self.log.debug('initialize_app: %r', argv)
 
     def prepare_to_run_command(self, cmd):
+        """Called after command identification, and before executing it."""
         self.log.debug('prepare_to_run_command %s', cmd.__class__.__name__)
 
     def clean_up(self, cmd, result, err):
+        """Called after command execution; `err` is an unhandled exception, or `None`."""
         self.log.debug('clean_up %s', cmd.__class__.__name__)
         if err:
             self.log.debug('got an error: %s', err)
