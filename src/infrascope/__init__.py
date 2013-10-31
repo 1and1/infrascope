@@ -51,6 +51,9 @@ def pkg_info():
             "console_scripts": [
                 "infrascope = infrascope.cli:run",
             ],
+            "infrascope.cli": [
+                "repo versions = infrascope.repositories:Versions",
+            ],
         },
 
         # dependency management
