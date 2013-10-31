@@ -1,0 +1,44 @@
+Filename: dput-webdav_1.0_all.deb
+SHA1: ace8d7b60e7dc3bbb8f5dee75c4ae2bda65ac683
+Package: dput-webdav
+Size: 6692
+Homepage: https://github.com/jhermann/artifactory-debian
+Description: dput plugin with extended WebDAV support
+ Built for dput 0.9.6.
+Architecture: all
+Priority: extra
+Installed-Size: 45
+Section: devel
+Maintainer: Juergen Hermann <jh@web.de>
+Version: 1.0
+Depends: dput
+
+Filename: dput-webdav_1.1_all.deb
+SHA1: 02848f601bad34f1bd85829a970dce7b038d3490
+Package: dput-webdav
+Size: 7218
+Homepage: https://github.com/jhermann/artifactory-debian
+Description: dput plugin with extended WebDAV support
+ Built for dput 0.9.6.
+Architecture: all
+Priority: extra
+Installed-Size: 46
+Section: devel
+Maintainer: Juergen Hermann <jh@web.de>
+Version: 1.1
+Depends: dput
+
+Filename: dput-webdav_1.2_all.deb
+SHA1: 81d4741187eccb0ea6a17cbca0a0e5e6c3eadb96
+Package: dput-webdav
+Size: 7666
+Homepage: https://github.com/jhermann/artifactory-debian
+Description: dput plugin with extended WebDAV support
+ Built for dput 0.9.6.
+Architecture: all
+Priority: extra
+Installed-Size: 47
+Section: devel
+Maintainer: Juergen Hermann <jh@web.de>
+Version: 1.2
+Depends: dput
