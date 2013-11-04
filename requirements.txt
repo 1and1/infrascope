@@ -4,6 +4,7 @@
 
 # runtime
 cliff >= 1.4.3
+cliff-tablib
 
 # build
 docutils >= 0.11
