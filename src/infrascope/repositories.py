@@ -17,10 +17,10 @@
 
 import logging
 
-from cliff.command import Command
+from cliff.lister import Lister
 
 
-class Versions(Command):
+class Versions(Lister):
     """Version reporting of artifacts in repositories."""
 
     log = logging.getLogger(__name__)
@@ -28,3 +28,4 @@ class Versions(Command):
     def take_action(self, args):
         """Execute 'repo versions' command."""
         self.log.debug("repo versions: %r", args)
+        return (("Package", "reponame"), (("foo", "1.1"),))
