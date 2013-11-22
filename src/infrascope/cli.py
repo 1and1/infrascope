@@ -58,9 +58,9 @@ class InfrascopeCLI(App):
 def run(argv=None):
     """Main CLI entry point."""
     cli = InfrascopeCLI()
-    sys.exit(cli.run(argv if argv is None else sys.argv[1:]))
+    return cli.run(sys.argv[1:] if argv is None else argv)
 
 
 if __name__ == "__main__":
     # When started via "python -m"
-    run()
+    sys.exit(run())
